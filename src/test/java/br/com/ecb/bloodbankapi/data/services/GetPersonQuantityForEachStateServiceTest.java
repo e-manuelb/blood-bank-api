@@ -5,7 +5,6 @@ import br.com.ecb.bloodbankapi.data.factories.PersonFactory;
 import br.com.ecb.bloodbankapi.data.factories.PersonInfoFactory;
 import br.com.ecb.bloodbankapi.data.repositories.person.PersonAddressRepository;
 import br.com.ecb.bloodbankapi.data.repositories.person.PersonRepository;
-import br.com.ecb.bloodbankapi.data.services.person.ListPersonsService;
 import br.com.ecb.bloodbankapi.data.services.person.SavePersonService;
 import br.com.ecb.bloodbankapi.domain.features.person.SavePerson;
 import br.com.ecb.bloodbankapi.domain.features.person.address.SavePersonAddress;

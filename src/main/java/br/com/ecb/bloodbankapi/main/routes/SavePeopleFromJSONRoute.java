@@ -10,15 +10,18 @@ import br.com.ecb.bloodbankapi.domain.models.person.PersonInfo;
 import br.com.ecb.bloodbankapi.main.factories.person.GetPersonByEmailControllerFactory;
 import br.com.ecb.bloodbankapi.main.factories.person.SavePersonControllerFactory;
 import br.com.ecb.bloodbankapi.shared.dtos.request.SavePeopleFromJSONDTO;
+import br.com.ecb.bloodbankapi.shared.dtos.response.MessageResponseDTO;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -32,7 +35,7 @@ public class SavePeopleFromJSONRoute {
         this.getPersonByEmailService = getPersonByEmailService;
     }
 
-    @PostMapping("/save")
+    @PostMapping("/save/")
     public ResponseEntity<?> handle(@RequestBody @Valid List<SavePeopleFromJSONDTO> savePeopleFromJSONDTOs) {
         SavePersonController savePersonController = new SavePersonControllerFactory(savePersonService).makeSavePersonController();
         GetPersonByEmailController getPersonByEmailController = new GetPersonByEmailControllerFactory(getPersonByEmailService).makeGetPersonByEmailController();
@@ -77,9 +80,7 @@ public class SavePeopleFromJSONRoute {
         if (people.size() > 0) {
             return new ResponseEntity<>(people, HttpStatus.CREATED);
         } else {
-            return new ResponseEntity<>(new HashMap<>() {{
-                put("message", "No new people have been added to the database.");
-            }}, HttpStatus.OK);
+            return new ResponseEntity<>(new MessageResponseDTO("No new people have been added to the database."), HttpStatus.OK);
         }
     }
 }
