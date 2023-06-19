@@ -1,0 +1,10 @@
+package br.com.ecb.bloodbankapi.domain.features;
+
+import br.com.ecb.bloodbankapi.domain.models.person.Person;
+
+import java.util.List;
+import java.util.Map;
+
+public interface GetAverageBMIPerAge {
+    Map<String, Double> handle(List<Person> people);
+}
