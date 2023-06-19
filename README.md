@@ -193,11 +193,11 @@ The endpoint uses the GET method and returns the `response`:
 }
 ```
 
-availableDonorsForEachBloodType -> The number of potential donors for each recipient blood type;
-averageAgeForEachBloodType -> Average age for each blood type;
-percentageOfObeseMenAndWomen -> Percentage of obese men and women;
-personQuantityForEachState -> Person quantity for each state;
-averageBMIPerAge -> Average BMI per age.
+- availableDonorsForEachBloodType -> The number of potential donors for each recipient blood type;
+- averageAgeForEachBloodType -> Average age for each blood type;
+- percentageOfObeseMenAndWomen -> Percentage of obese men and women;
+- personQuantityForEachState -> Person quantity for each state;
+- averageBMIPerAge -> Average BMI per age.
 
 To run the project, just clone the repository and change the environment variables in `application.properties`.
 
