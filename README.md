@@ -4,8 +4,8 @@ In it, you will be able to navigate between the candidate registration and infor
 
 The API has two endpoints:
 
-{baseURL}/api/person/save
-{baseURL}/api/info/
+- {baseURL}/api/person/save/
+- {baseURL}/api/info/
 
 The first refers to the registration of candidates for the Blood Bank.
 
