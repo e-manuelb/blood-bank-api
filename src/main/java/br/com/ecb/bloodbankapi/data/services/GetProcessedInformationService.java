@@ -39,11 +39,15 @@ public class GetProcessedInformationService implements GetProcessedInformation {
 
         List<Person> people = listPersonsService.handle();
 
-        result.put("personQuantityForEachState", getPersonQuantityForEachStateService.handle());
-        result.put("averageBMIPerAge", getAverageBMIPerAgeService.handle(people));
-        result.put("percentageOfObeseMenAndWomen", getPercentageOfObeseMenAndWomen.handle(people));
-        result.put("averageAgeForEachBloodType", getAverageAgeForEachBloodTypeService.handle(people));
-        result.put("availableDonorsForEachBloodType", getAvailableDonorsForEachBloodTypeService.handle(people));
+        if (people.size() == 0) {
+            result.put("message", "People not found. Please register someone.");
+        } else {
+            result.put("personQuantityForEachState", getPersonQuantityForEachStateService.handle());
+            result.put("averageBMIPerAge", getAverageBMIPerAgeService.handle(people));
+            result.put("percentageOfObeseMenAndWomen", getPercentageOfObeseMenAndWomen.handle(people));
+            result.put("averageAgeForEachBloodType", getAverageAgeForEachBloodTypeService.handle(people));
+            result.put("availableDonorsForEachBloodType", getAvailableDonorsForEachBloodTypeService.handle(people));
+        }
 
         return result;
     }

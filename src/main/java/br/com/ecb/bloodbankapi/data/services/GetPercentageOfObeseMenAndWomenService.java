@@ -15,7 +15,7 @@ public class GetPercentageOfObeseMenAndWomenService implements GetPercentageOfOb
         this.getBMIService = getBMIService;
     }
 
-    public Map<String, String> handle(List<Person> people) {
+    public Map<String, Double> handle(List<Person> people) {
         List<Double> maleBMIList = new ArrayList<>();
         List<Double> femaleBMIList = new ArrayList<>();
 
@@ -32,10 +32,10 @@ public class GetPercentageOfObeseMenAndWomenService implements GetPercentageOfOb
         Integer obeseMenQuantity = maleBMIList.stream().filter(bmi -> bmi > 30).toList().size();
         Integer obeseWomenQuantity = femaleBMIList.stream().filter(bmi -> bmi > 30).toList().size();
 
-        Map<String, String> percentages = new HashMap<>();
+        Map<String, Double> percentages = new HashMap<>();
 
-        percentages.put("male", ((double) (obeseMenQuantity * 100) / maleBMIList.size()) + "%");
-        percentages.put("female", ((double) (obeseWomenQuantity * 100) / femaleBMIList.size()) + "%");
+        percentages.put("male", ((double) (obeseMenQuantity * 100) / maleBMIList.size()));
+        percentages.put("female", ((double) (obeseWomenQuantity * 100) / femaleBMIList.size()));
 
         return percentages;
     }

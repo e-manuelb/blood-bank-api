@@ -71,7 +71,7 @@ public class GetPercentageOfObeseMenAndWomenServiceTest {
 
         List<Person> listedPeople = listPersonsService.handle();
 
-        Map<String, String> percentageOfObeseMenAndWomen = getPercentageOfObeseMenAndWomenService.handle(listedPeople);
+        Map<String, Double> percentageOfObeseMenAndWomen = getPercentageOfObeseMenAndWomenService.handle(listedPeople);
 
         Assertions.assertNotNull(percentageOfObeseMenAndWomen);
     }
