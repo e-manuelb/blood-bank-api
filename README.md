@@ -178,8 +178,8 @@ The endpoint uses the GET method and returns the `response`:
         }
     ],
     "percentageOfObeseMenAndWomen": {
-        "female": "0.0%",
-        "male": "0.0%"
+        "female": 0.0,
+        "male": 0.0
     },
     "personQuantityForEachState": [
         {
