@@ -199,7 +199,7 @@ The endpoint uses the GET method and returns the `response`:
 - personQuantityForEachState -> Person quantity for each state;
 - averageBMIPerAge -> Average BMI per age.
 
-To run the project, just clone the repository and change the environment variables in `application.properties`.
+To run the project, just clone the repository and change the environment variables in `src/main/resources/application.properties`.
 
 ```properties
 spring.jpa.database=MYSQL (change for your database)
